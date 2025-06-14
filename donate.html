@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel ="stylesheet" href = "styles.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="logo"><img src="/Users/pranitprasanna/Downloads/ChatGPT Image Jun 14, 2025, 01_53_26 PM.png" alt="Logo"></a>
+            <a href="/" id = "navbar_toggle" id="desktop-menu"></a>
+                <span class ="bar"></span><span class="bar"></span>
+                <span class ="bar"></span>
+        </div>
+        <ul class ="navbar_menu">
+            <!-- <li class ="navbar_item">
+                <a class="active" href="#home">Home</a>
+            </li> -->
+            <li class ="navbar_item">
+                <a onclick= "location.href = 'contact.html'" class="navbar_links">Contact</a>
+            </li>
+            <li class ="navbar_item">
+                <a onclick= "location.href = 'about.html'" class="navbar_links">About</a>
+            </li>
+             </li class ="navbar_item">
+                <a onclick= "location.href = 'donate.html'" class="button">Donate</a>
+            </li>
+        </ul>
+    </nav>
+
+</head>
+<body>
+    <div class="donation-container">
+        <h1 id="title">Make a Donation</h1>
+        
+        <div class="payment-form">
+            <form id="donationForm">
+                <div class="amount-section">
+                    <h3>Select Amount</h3>
+                    <div class="amount-buttons">
+                        <button type="button" class="amount-btn" data-amount="10">$10</button>
+                        <button type="button" class="amount-btn" data-amount="25">$25</button>
+                        <button type="button" class="amount-btn" data-amount="50">$50</button>
+                        <button type="button" class="amount-btn" data-amount="100">$100</button>
+                        <button type="button" class="amount-btn" data-amount="250">$250</button>
+                        <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+                    </div>
+                    <div class="custom-amount-input" style="display: none;">
+                        <input type="number" id="customAmount" placeholder="Enter amount" min="1">
+                    </div>
+                </div>
+
+                <div class="payment-details">
+                    <h3>Payment Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card Type</label>
+                        <div class="card-type-selection">
+                            <button type="button" class="card-type-btn active" data-type="credit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                </svg>
+                                Credit Card
+                            </button>
+                            <button type="button" class="card-type-btn" data-type="debit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                    <circle cx="7" cy="15" r="1"/>
+                                </svg>
+                                Debit Card
+                            </button>
+                        </div>
+                        
+                        <label style="margin-top: 20px;">Select Card Brand</label>
+                        <div class="card-types">
+                            <label class="card-type-option">
+                                <input type="radio" name="cardType" value="visa" checked>
+                                <div class="card-logo visa">
+                                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="60" height="40" rx="4" fill="#1A1F71"/>
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="14" font-weight="bold">VISA</text>
+                                    </svg>
+                                </div>
+                            </label>
+                            <label class="card-type-option">
+                                <input type="radio" name="cardType" value="mastercard">
+                                <div class="card-logo mastercard">
+                                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="60" height="40" rx="4" fill="#EB001B"/>
+                                        <circle cx="24" cy="20" r="10" fill="#FF5F00"/>
+                                        <circle cx="36" cy="20" r="10" fill="#F79E1B"/>
+                                    </svg>
+                                </div>
+                            </label>
+                            <label class="card-type-option">
+                                <input type="radio" name="cardType" value="amex">
+                                <div class="card-logo amex">
+                                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="60" height="40" rx="4" fill="#006FCF"/>
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="12" font-weight="bold">AMEX</text>
+                                    </svg>
+                                </div>
+                            </label>
+                            <label class="card-type-option">
+                                <input type="radio" name="cardType" value="discover">
+                                <div class="card-logo discover">
+                                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="60" height="40" rx="4" fill="#FF6000"/>
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="10" font-weight="bold">DISCOVER</text>
+                                    </svg>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-element">Card Details</label>
+                        <div id="card-element" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+                            <!-- Stripe Elements will be inserted here -->
+                        </div>
+                        <div id="card-errors" role="alert" style="color: red; margin-top: 10px;"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="donate-btn">Complete Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Stripe (replace with your public key)
+        const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY');
+        const elements = stripe.elements();
+
+        // Create card element
+        const cardElement = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    color: '#32325d',
+                    '::placeholder': {
+                        color: '#aab7c4'
+                    }
+                }
+            }
+        });
+        cardElement.mount('#card-element');
+
+        // Handle card errors
+        cardElement.on('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Amount selection
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const customAmountInput = document.querySelector('.custom-amount-input');
+        const customAmountField = document.getElementById('customAmount');
+        let selectedAmount = 0;
+
+        amountButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                amountButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.getAttribute('data-amount') === 'custom') {
+                    customAmountInput.style.display = 'block';
+                    customAmountField.focus();
+                } else {
+                    customAmountInput.style.display = 'none';
+                    selectedAmount = parseInt(this.getAttribute('data-amount'));
+                }
+            });
+        });
+
+        customAmountField.addEventListener('input', function() {
+            selectedAmount = parseInt(this.value) || 0;
+        });
+
+        // Form submission
+        document.getElementById('donationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (selectedAmount === 0) {
+                alert('Please select a donation amount');
+                return;
+            }
+
+            const email = document.getElementById('email').value;
+            const donateBtn = document.querySelector('.donate-btn');
+            
+            // Disable button
+            donateBtn.disabled = true;
+            donateBtn.textContent = 'Processing...';
+
+            try {
+                // Create payment intent
+                const response = await fetch('/api/create-payment-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: selectedAmount,
+                        currency: 'usd'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // Confirm payment
+                const result = await stripe.confirmCardPayment(data.clientSecret, {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            email: email
+                        }
+                    }
+                });
+
+                if (result.error) {
+                    // Show error to customer
+                    document.getElementById('card-errors').textContent = result.error.message;
+                    donateBtn.disabled = false;
+                    donateBtn.textContent = 'Complete Donation';
+                } else {
+                    // Payment successful
+                    alert(`Thank you for your donation of $${selectedAmount}!`);
+                    // Optionally redirect to a success page
+                    // window.location.href = '/success';
+                    
+                    // Reset form
+                    document.getElementById('donationForm').reset();
+                    cardElement.clear();
+                    selectedAmount = 0;
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    donateBtn.disabled = false;
+                    donateBtn.textContent = 'Complete Donation';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('card-errors').textContent = 'An error occurred. Please try again.';
+                donateBtn.disabled = false;
+                donateBtn.textContent = 'Complete Donation';
+            }
+        });
+        
+        // Card type selection
+        const cardTypeBtns = document.querySelectorAll('.card-type-btn');
+        let selectedCardType = 'credit';
+        
+        cardTypeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                cardTypeBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Update selected card type
+                selectedCardType = this.dataset.type;
+                
+                // Optional: You can add different behavior for credit vs debit here
+                console.log('Selected card type:', selectedCardType);
+            });
+        });
+    </script>
+</body>
+</html>

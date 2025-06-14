@@ -1,0 +1,128 @@
+<svg width="700" height="300" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tech icons floating around the title -->
+  
+  <!-- CPU/Processor icon (top left corner) - EXACT from your image -->
+  <g transform="translate(60, 60)">
+    <!-- Main chip body - dark blue with rounded corners -->
+    <rect x="-25" y="-25" width="50" height="50" rx="8" fill="#FFC107"/>
+    
+    <!-- White rounded square outline -->
+    <rect x="-18" y="-18" width="36" height="36" rx="6" fill="white"/>
+    
+    <!-- Inner dark blue square -->
+    <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#FFC107"/>
+    
+    <!-- Pins extending from all sides -->
+    <g fill="#FFC107">
+      <!-- Top row pins -->
+      <rect x="-15" y="-32" width="3" height="7"/>
+      <rect x="-9" y="-32" width="3" height="7"/>
+      <rect x="-3" y="-32" width="3" height="7"/>
+      <rect x="3" y="-32" width="3" height="7"/>
+      <rect x="9" y="-32" width="3" height="7"/>
+      <rect x="15" y="-32" width="3" height="7"/>
+      
+      <!-- Bottom row pins -->
+      <rect x="-15" y="25" width="3" height="7"/>
+      <rect x="-9" y="25" width="3" height="7"/>
+      <rect x="-3" y="25" width="3" height="7"/>
+      <rect x="3" y="25" width="3" height="7"/>
+      <rect x="9" y="25" width="3" height="7"/>
+      <rect x="15" y="25" width="3" height="7"/>
+      
+      <!-- Left side pins -->
+      <rect x="-32" y="-15" width="7" height="3"/>
+      <rect x="-32" y="-9" width="7" height="3"/>
+      <rect x="-32" y="-3" width="7" height="3"/>
+      <rect x="-32" y="3" width="7" height="3"/>
+      <rect x="-32" y="9" width="7" height="3"/>
+      <rect x="-32" y="15" width="7" height="3"/>
+      
+      <!-- Right side pins -->
+      <rect x="25" y="-15" width="7" height="3"/>
+      <rect x="25" y="-9" width="7" height="3"/>
+      <rect x="25" y="-3" width="7" height="3"/>
+      <rect x="25" y="3" width="7" height="3"/>
+      <rect x="25" y="9" width="7" height="3"/>
+      <rect x="25" y="15" width="7" height="3"/>
+    </g>
+  </g>
+  
+  <!-- Ruler icon (top right corner) - EXACT from image -->
+  <g transform="translate(640, 60)">
+    <!-- Green circle background -->
+    <circle cx="0" cy="0" r="35" fill="#4CAF50"/>
+    
+    <!-- White ruler body -->
+    <rect x="-20" y="-10" width="40" height="20" rx="3" fill="white"/>
+    
+    <!-- Ruler tick marks -->
+    <g fill="#4CAF50">
+      <rect x="-17" y="-8" width="2" height="16"/>
+      <rect x="-12" y="-8" width="2" height="10"/>
+      <rect x="-7" y="-8" width="2" height="16"/>
+      <rect x="-2" y="-8" width="2" height="10"/>
+      <rect x="3" y="-8" width="2" height="16"/>
+      <rect x="8" y="-8" width="2" height="10"/>
+      <rect x="13" y="-8" width="2" height="16"/>
+    </g>
+  </g>
+  
+  <!-- Network icon (bottom left corner) - EXACT from image -->
+  <g transform="translate(60, 240)">
+    <!-- Light blue circle background -->
+    <circle cx="0" cy="0" r="35" fill="#03A9F4"/>
+    
+    <!-- Network nodes and connections -->
+    <g>
+      <!-- Vertical stem -->
+      <rect x="-2" y="-12" width="4" height="20" fill="white"/>
+      
+      <!-- Top circle -->
+      <circle cx="0" cy="-12" r="5" fill="white"/>
+      <circle cx="0" cy="-12" r="2" fill="#03A9F4"/>
+      
+      <!-- Horizontal connector -->
+      <rect x="-12" y="6" width="24" height="4" fill="white"/>
+      
+      <!-- Left circle -->
+      <circle cx="-12" cy="8" r="5" fill="white"/>
+      <circle cx="-12" cy="8" r="2" fill="#03A9F4"/>
+      
+      <!-- Right square -->
+      <rect x="7" y="3" width="10" height="10" rx="1" fill="white"/>
+    </g>
+  </g>
+  
+  <!-- Atom icon (bottom right corner) - Orange atom -->
+  <g transform="translate(640, 240)">
+    <!-- Orange circle background -->
+    <circle cx="0" cy="0" r="35" fill="#FF6F00"/>
+    
+    <!-- Atom structure -->
+    <g>
+      <!-- Electron orbits -->
+      <g stroke="white" stroke-width="3" fill="none">
+        <!-- First orbit -->
+        <ellipse cx="0" cy="0" rx="22" ry="8" transform="rotate(60)"/>
+        <!-- Second orbit -->
+        <ellipse cx="0" cy="0" rx="22" ry="8" transform="rotate(-60)"/>
+        <!-- Third orbit -->
+        <ellipse cx="0" cy="0" rx="22" ry="8" transform="rotate(0)"/>
+      </g>
+      
+      <!-- Center nucleus -->
+      <circle cx="0" cy="0" r="5" fill="white"/>
+    </g>
+  </g>
+  
+  <!-- Title text -->
+  <text x="350" y="160" font-family="Arial, sans-serif" font-size="90" font-weight="bold" 
+        text-anchor="middle">
+    <tspan fill="white">STEM</tspan><tspan fill="lightblue" font-style="italic">n</tspan><tspan fill="white">LEAP</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="350" y="195" font-family="Arial, sans-serif" font-size="20" fill="lightgray" 
+        text-anchor="middle">Learn | Engage | Apply | Prototype</text>
+</svg>

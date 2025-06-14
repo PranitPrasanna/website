@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href = "styles.css" />
+
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="logo"><img src="/Users/pranitprasanna/Downloads/ChatGPT Image Jun 14, 2025, 01_53_26 PM.png" alt="Logo"></a>
+            <a href="/" id = "navbar_toggle" id="desktop-menu"></a>
+                <span class ="bar"></span><span class="bar"></span>
+                <span class ="bar"></span>
+        </div>
+        <ul class ="navbar_menu">
+            <!-- <li class ="navbar_item">
+                <a class="active" href="#home">Home</a>
+            </li> -->
+            <li class ="navbar_item">
+                <a onclick= "location.href = 'contact.html'" class="navbar_links">Contact</a>
+            </li>
+            <li class ="navbar_item">
+                <a onclick= "location.href = 'about.html'" class="navbar_links">About</a>
+            </li>
+             </li class ="navbar_item">
+                <a onclick= "location.href = 'donate.html'" class="button">Donate</a>
+            </li>
+        </ul>
+    </nav>
+
+</head>
+<body>
+    <div class="circuit-background">
+        <svg class="circuit-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="circuit" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                    <!-- Circuit paths -->
+                    <path d="M 50 0 L 50 50 L 100 50" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    <path d="M 150 0 L 150 100 L 200 100" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    <path d="M 0 150 L 50 150 L 50 200" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    <path d="M 100 100 L 100 150 L 150 150" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    <path d="M 0 50 L 50 50" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    <path d="M 150 150 L 200 150" stroke="#00ff41" stroke-width="2" fill="none"/>
+                    
+                    <!-- Circuit nodes -->
+                    <circle cx="50" cy="50" r="4" fill="#00ff41"/>
+                    <circle cx="150" cy="100" r="4" fill="#00ff41"/>
+                    <circle cx="100" cy="150" r="4" fill="#00ff41"/>
+                    <circle cx="50" cy="150" r="4" fill="#00ff41"/>
+                    <circle cx="150" cy="150" r="4" fill="#00ff41"/>
+                    <circle cx="100" cy="50" r="3" fill="#00ff41"/>
+                    
+                    <!-- Moving electrical signals (continuous one-way paths) -->
+                    <circle class="signal signal1" cx="0" cy="0" r="4" fill="#ffffff">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+                            <mpath href="#path1"/>
+                        </animateMotion>
+                    </circle>
+                    <circle class="signal signal2" cx="0" cy="0" r="4" fill="#ffffff">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
+                            <mpath href="#path1"/>
+                        </animateMotion>
+                    </circle>
+                    <circle class="signal signal3" cx="0" cy="0" r="4" fill="#ffffff">
+                        <animateMotion dur="5s" repeatCount="indefinite" begin="0s">
+                            <mpath href="#path2"/>
+                        </animateMotion>
+                    </circle>
+                    
+                    <!-- Define continuous one-way paths for signals -->
+                    <path id="path1" d="M -50 50 L 0 50 L 50 50 L 100 50 L 150 50 L 200 50 L 250 50" fill="none"/>
+                    <path id="path2" d="M 150 -50 L 150 0 L 150 50 L 150 100 L 150 150 L 150 200 L 150 250" fill="none"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit)"/>
+        </svg>
+    </div>
+    <div class="card">
+    </div>
+</body>
+</html>

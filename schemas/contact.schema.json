@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Contact Form Schema",
+  "description": "Schema for validating contact form submissions",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z\\s'-]+$",
+      "description": "Full name of the person contacting"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 254,
+      "description": "Email address for contact response"
+    },
+    "message": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000,
+      "description": "Message content from the contact form"
+    }
+  },
+  "required": ["name", "email", "message"],
+  "additionalProperties": false
+}
