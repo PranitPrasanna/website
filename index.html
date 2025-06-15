@@ -163,6 +163,14 @@
       const circles = container.querySelectorAll('.circle');
       circles.forEach(circle => circle.remove());
 
+      // Define title area boundaries (450px wide SVG centered)
+      const titleWidth = 450;
+      const titleHeight = 200; // Approximate height including tagline
+      const titleLeft = (window.innerWidth - titleWidth) / 2;
+      const titleRight = titleLeft + titleWidth;
+      const titleTop = (containerHeight - titleHeight) / 2;
+      const titleBottom = titleTop + titleHeight;
+
       for (let i = 0; i < circleCount; i++) {
         const circle = document.createElement('div');
         circle.classList.add('circle');
@@ -171,8 +179,19 @@
         circle.style.width = `${size}px`;
         circle.style.height = `${size}px`;
 
-        circle.style.top = `${Math.random() * containerHeight}px`;
-        circle.style.left = `${Math.random() * window.innerWidth}px`;
+        // Generate random position
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * containerHeight;
+
+        // Check if star would overlap with title area, regenerate if needed
+        while (x > titleLeft - 20 && x < titleRight + 20 && 
+               y > titleTop - 20 && y < titleBottom + 20) {
+          x = Math.random() * window.innerWidth;
+          y = Math.random() * containerHeight;
+        }
+
+        circle.style.top = `${y}px`;
+        circle.style.left = `${x}px`;
 
         circle.style.animationDelay = `${Math.random() * 2}s`;
         container.appendChild(circle);

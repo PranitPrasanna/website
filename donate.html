@@ -48,7 +48,10 @@
                         <button type="button" class="amount-btn" data-amount="custom">Custom</button>
                     </div>
                     <div class="custom-amount-input" style="display: none;">
-                        <input type="number" id="customAmount" placeholder="Enter amount" min="1">
+                        <div class="dollar-input-wrapper">
+                            <span class="dollar-sign">$</span>
+                            <input type="number" id="customAmount" placeholder="0" min="1">
+                        </div>
                     </div>
                 </div>
 
@@ -57,7 +60,7 @@
                     
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" placeholder="name@example.com" required>
                     </div>
 
                     <div class="form-group">

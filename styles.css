@@ -336,14 +336,31 @@ body {
     box-shadow: 0 5px 15px rgba(128, 0, 128, 0.5);
 }
 
+.dollar-input-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+}
+
+.dollar-sign {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
 .custom-amount-input input {
     width: 100%;
-    padding: 15px;
+    padding: 12px 15px 12px 35px;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     color: white;
-    font-size: 16px;
+    font-size: 16;
 }
 
 .custom-amount-input input::placeholder {
